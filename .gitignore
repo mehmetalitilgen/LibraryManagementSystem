@@ -1,0 +1,8 @@
+# .gitignore dosyası
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+*.log
+docker-compose.override.yml

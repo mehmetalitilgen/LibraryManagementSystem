@@ -2,7 +2,7 @@ import redis
 import json
 from flask import request, jsonify
 from functools import wraps
-from config import Config
+from api_gateway.config import Config
 
 # Redis connection using config values
 redis_client = redis.StrictRedis(
@@ -16,6 +16,8 @@ def cache_response(timeout=300):
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
+            if not redis_client.ping():  # Redis bağlantı kontrolü
+                return func(*args, **kwargs)
             key = f"{request.path}"
             cached_response = redis_client.get(key)
             if cached_response:

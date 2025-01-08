@@ -14,5 +14,6 @@ class Config:
     RATE_LIMIT = os.getenv("RATE_LIMIT", "100 per hour")
     LOAD_BALANCER_TYPE = os.getenv("LOAD_BALANCER_TYPE", "round_robin")
     FLASK_DEBUG = os.getenv("FLASK_DEBUG", "False").lower() == "true"
-    USER_SERVICE_INSTANCES = os.getenv("USER_SERVICE_INSTANCES", "http://user-service-1:5000,http://user-service-2:5000")
-    BOOK_SERVICE_INSTANCES = os.getenv("BOOK_SERVICE_INSTANCES", "http://book-service-1:5000,http://book-service-2:5000")
+    USER_SERVICE_INSTANCES = os.getenv("USER_SERVICE_INSTANCES", "http://127.0.0.1:5001,http://127.0.0.1:5002")
+    BOOK_SERVICE_INSTANCES = os.getenv("BOOK_SERVICE_INSTANCES", "http://127.0.0.1:5003,http://127.0.0.1:5004")
+    BORROW_SERVICE_INSTANCES = os.getenv("BORROW_SERVICE_INSTANCES", "http://127.0.0.1:5005,http://127.0.0.1:5006")

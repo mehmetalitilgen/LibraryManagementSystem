@@ -1,6 +1,6 @@
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from config import Config
+from api_gateway.config import Config
 import redis
 
 def setup_rate_limiter(app):
